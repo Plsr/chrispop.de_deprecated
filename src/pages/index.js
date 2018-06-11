@@ -1,9 +1,10 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import glamorous from 'glamorous'
 
-import { rhythm } from '../utils/typography'
+import PostTitle from '../components/PostTitle'
+import PostDate from '../components/PostDate'
 
 class BlogIndex extends React.Component {
   render() {
@@ -16,19 +17,13 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+            <PostWrapper key={node.fields.slug}>
+              <PostTitle to={node.fields.slug}>
                   {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
+              </PostTitle>
+              <PostDate>{node.frontmatter.date}</PostDate>
               <p dangerouslySetInnerHTML={{ __html: node.html }} />
-            </div>
+            </PostWrapper>
           )
         })}
       </div>
@@ -37,6 +32,13 @@ class BlogIndex extends React.Component {
 }
 
 export default BlogIndex
+
+const PostWrapper = glamorous.div({
+  marginBottom: 120,
+  ':last-child': {
+    marginBottom: 0
+  }
+})
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -56,7 +58,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             title
           }
         }

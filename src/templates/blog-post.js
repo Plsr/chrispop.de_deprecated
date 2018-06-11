@@ -2,6 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import PostTitle from '../components/PostTitle'
+import PostDate from '../components/PostDate'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -12,8 +14,8 @@ class BlogPostTemplate extends React.Component {
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
+        <PostTitle>{post.frontmatter.title}</PostTitle>
+        <PostDate>{post.frontmatter.date}</PostDate>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
 
