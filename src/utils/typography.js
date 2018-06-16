@@ -3,7 +3,7 @@ import { primaryColor, grey } from './colors'
 
 const typography = new Typography({
   title: 'chrispop',
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   baseLineHeight: '1.8',
   scaleRatio: 2,
   googleFonts: [
