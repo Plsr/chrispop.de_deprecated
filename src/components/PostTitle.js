@@ -29,7 +29,7 @@ PostTitle.defaultProps = {
 }
 
 const Headline = glamorous.h3({
-  marginBottom: rhythm(1 / 4 )
+  marginBottom: rhythm(1 / 2)
 })
 
 
