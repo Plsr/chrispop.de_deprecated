@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import glamourous from 'glamorous'
+import glamorous from 'glamorous'
 
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 class Template extends React.PureComponent {
@@ -16,15 +17,19 @@ class Template extends React.PureComponent {
       </h1>
     )
     return (
-      <Wrapper>
-        <Header siteTitle={siteTitle} />
-        {children()}
-      </Wrapper>
+      <div>
+        <Wrapper>
+          <Header siteTitle={siteTitle} />
+            {children()}
+        </Wrapper>
+        <Footer />
+      </div>
     )
   }
 }
 
-const Wrapper = glamourous.div({
+
+const Wrapper = glamorous.div({
   maxWidth: 700,
   margin: '0 auto',
   padding: '0 20px'

@@ -10,3 +10,19 @@ mechanische Tastaturen (gott, ich *liebe* mechanische Tastaturen).
 
 Wenn ihr das hier lest, habt ihr vermutlich die Kontrolle über euer Leben
 verloren.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
