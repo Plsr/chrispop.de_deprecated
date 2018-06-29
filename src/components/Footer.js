@@ -9,7 +9,7 @@ class Footer extends React.PureComponent {
         <Content>
           <Item><Link to="/about">About</Link></Item>
           <Item><Link to="/imprint">Impressum</Link></Item>
-          <Item><Link to="/privacy">Datanschutzerklärung</Link></Item>
+          <Item><Link to="/privacy">Datenschutzerklärung</Link></Item>
         </Content>
       </Wrapper>
     )
