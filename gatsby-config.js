@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: "chrispop.de",
+    description: "Ein Blog? In 2018? Das ist doch quatsch!",
     author: "Christian Poplawski",
+    siteUrl: "https://chrispop.de"
   },
   plugins: [
     {
@@ -48,13 +50,61 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography.js'
       }
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+            query: `
+              {
+                site {
+                  siteMetadata {
+                    title
+                    description
+                    siteUrl
+                    site_url: siteUrl
+                  }
+                }
+              }
+            `,
+            feeds: [
+              {
+                serialize: ({ query: { site, allMarkdownRemark } }) => {
+                  return allMarkdownRemark.edges.map(edge => {
+                    return Object.assign({}, edge.node.frontmatter, {
+                      description: edge.node.excerpt,
+                      url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                      guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                      custom_elements: [{ "content:encoded": edge.node.html }],
+                    })
+                  })
+                },
+                query: `
+                  {
+                    allMarkdownRemark(
+                      limit: 1000,
+                      sort: { order: DESC, fields: [frontmatter___date] },
+                      filter: { fileAbsolutePath: { glob: "**/posts/**" } }
+                    ) {
+                      edges {
+                        node {
+                          excerpt
+                          html
+                          fields { slug }
+                          frontmatter {
+                            title
+                            date
+                          }
+                        }
+                      }
+                    }
+                  }
+                `,
+                output: "/rss.xml",
+              },
+            ],
+          },
+
+    }
   ],
 }
