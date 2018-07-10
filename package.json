@@ -28,6 +28,7 @@
     "gatsby-transformer-sharp": "^1.6.1",
     "glamorous": "^4.13.1",
     "lodash": "^4.15.0",
+    "typography-plugin-code": "^0.16.11",
     "typography-theme-doelger": "^0.15.11",
     "typography-theme-parnassus": "^0.15.10"
   },

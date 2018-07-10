@@ -1,4 +1,5 @@
 import Typography from "typography"
+import CodePlugin from 'typography-plugin-code'
 import { primaryColor, grey } from './colors'
 
 const typography = new Typography({
@@ -32,7 +33,10 @@ const typography = new Typography({
       fontStyle: 'italic',
       color: grey
     }
-  })
+  }),
+  plugins: [
+    new CodePlugin(),
+  ]
 })
 
 export default typography;
