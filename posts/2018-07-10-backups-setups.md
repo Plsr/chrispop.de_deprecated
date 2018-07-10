@@ -57,7 +57,7 @@ Nachdem ich nicht noch einmal 3 Stunden warten wollte, nur um dann enttäuscht z
 werden, habe ich die Festplatte einfach Platt gemacht und gehofft, dass ich
 irgendwie noch an die wichtigen Dinge aus dem Backup komme. Die wichtigen Dinge
 umfasste in diesem Fall einen Ordner mit ein bisschen Papierkram und mein
-SHH-Key. Beides klappte, und jetzt habe ich hier eine ziemlich Blanke
+SSH-Key. Beides klappte, und jetzt habe ich hier eine ziemlich Blanke
 macOS-Installation.
 
 Mein Ziel ist es jetzt, möglichst nicht mehr auf Backups angewiesen zu sein.
