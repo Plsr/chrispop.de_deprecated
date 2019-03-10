@@ -4,17 +4,21 @@ import { primaryColor, grey } from './colors'
 
 const typography = new Typography({
   title: 'chrispop',
-  baseFontSize: '16px',
+  baseFontSize: '20px',
   baseLineHeight: '1.8',
   scaleRatio: 2,
   googleFonts: [
     {
-      name: 'Montserrat',
+      name: 'Alegreya Sans',
+      styles: ['400', '700']
+    },
+    {
+      name: 'Alegreya',
       styles: ['400', '700']
     }
   ],
-  headerFontFamily: ['Montserrat', 'sans-serif'],
-  bodyFontFamily: ['Montserrat', 'sans-serif'],
+  headerFontFamily: ['Alegreya Sans', 'sans-serif'],
+  bodyFontFamily: ['Alegreya', 'sans-serif'],
   headerGreyHue: 'warm',
   bodyGreyHue: 'warm',
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({

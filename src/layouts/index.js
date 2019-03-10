@@ -30,7 +30,7 @@ class Template extends React.PureComponent {
 
 
 const Wrapper = glamorous.div({
-  maxWidth: 700,
+  maxWidth: 900,
   margin: '0 auto',
   padding: '0 20px'
 })
